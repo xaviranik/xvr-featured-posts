@@ -2,7 +2,7 @@
 
 namespace XVR\Featured_Posts\Base;
 
-class BaseController
+class Base_Controller
 {
 	public $plugin_path;
 

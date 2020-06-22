@@ -2,12 +2,12 @@
 
 namespace XVR\Featured_Posts\Base;
 
-use XVR\Featured_Posts\Base\BaseController;
+use XVR\Featured_Posts\Base\Base_Controller;
 
 /**
 * Enqeues scripts
 */
-class Enqueue extends BaseController
+class Enqueue extends Base_Controller
 {
 	public function register() {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
