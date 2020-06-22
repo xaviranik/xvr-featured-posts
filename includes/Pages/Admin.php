@@ -4,9 +4,10 @@
  */
 namespace XVR\Featured_Posts\Pages;
 
-use XVR\Featured_Posts\Api\Callbacks\Admin_Callback;
 use XVR\Featured_Posts\Api\Settings_Api;
 use XVR\Featured_Posts\Base\Base_Controller;
+use XVR\Featured_Posts\Api\Taxonomy\Category;
+use XVR\Featured_Posts\Api\Callbacks\Admin_Callback;
 
 /**
 * Admin Settings Page
@@ -152,11 +153,7 @@ class Admin extends Base_Controller {
 				'section' => 'xvr_featured_posts_settings_index_id',
 				'args' => [
 					'label_for' => 'categories_post[]',
-					'options' => [
-						'horror' => 'Horror',
-						'comedy' => 'Comedy',
-						'screen-play' => 'Screen Play'
-					],
+					'options' => Category::get_categories(),
 					'is_multiple' => true,
 					'name' => 'categories_post'
 				],

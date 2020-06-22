@@ -4,7 +4,6 @@
 namespace XVR\Featured_Posts\Api\Callbacks;
 
 
-use ParagonIE\Sodium\Core\BLAKE2b;
 use XVR\Featured_Posts\Base\Base_Controller;
 
 class Admin_Callback extends Base_Controller {
@@ -42,11 +41,7 @@ class Admin_Callback extends Base_Controller {
 
 		$select_options = '';
 		foreach ( $options as $key => $option ) {
-			if ( ! is_array( $value ) ) {
-				$is_selected = $key == $value ? 'selected' : '';
-			} else {
-				$is_selected = in_array($key, $value) ? 'selected' : '';
-			}
+			$is_selected = $this->get_selected_item( $key, $value );
 			$select_options .= '<option value="'. $key .'" ' . $is_selected . '>'. $option . '</option>';
 		}
 
@@ -54,5 +49,12 @@ class Admin_Callback extends Base_Controller {
 		$output .= $select_options;
 		$output .= '</select>';
 		echo  $output;
+	}
+
+	private function get_selected_item( $key, $value ) {
+		if ( ! is_array( $value ) ) {
+			return $key == $value ? 'selected' : '';
+		}
+		return in_array($key, $value) ? 'selected' : '';
 	}
 }
