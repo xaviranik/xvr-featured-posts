@@ -1,0 +1,19 @@
+{
+    "name": "xavir/xvr-featured-posts",
+    "description": "plugin description",
+    "type": "project",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "Xavir",
+            "email": "xaviranik.me@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "XVR\\Featured_Posts\\": "./includes"
+        }
+    }
+}
