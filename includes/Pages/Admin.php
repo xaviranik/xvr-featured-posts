@@ -157,7 +157,8 @@ class Admin extends Base_Controller {
 						'comedy' => 'Comedy',
 						'screen-play' => 'Screen Play'
 					],
-					'is_multiple' => true
+					'is_multiple' => true,
+					'name' => 'categories_post'
 				],
 			],
 		];
