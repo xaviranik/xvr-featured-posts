@@ -5,14 +5,13 @@
 namespace XVR\Featured_Posts\Pages;
 
 use XVR\Featured_Posts\Api\Settings_Api;
-use XVR\Featured_Posts\Base\Base_Controller;
 use XVR\Featured_Posts\Api\Taxonomy\Category;
 use XVR\Featured_Posts\Api\Callbacks\Admin_Callback;
 
 /**
 * Admin Settings Page
 */
-class Admin extends Base_Controller {
+class Admin {
 
 	/**
 	 * @var array[]
@@ -34,6 +33,9 @@ class Admin extends Base_Controller {
 	 */
 	private $callback;
 
+	/**
+	 * Registers class dependencies
+	 */
 	public function register() {
 
 		$this->settings = new Settings_Api();
@@ -60,7 +62,7 @@ class Admin extends Base_Controller {
 				'capability' => 'manage_options',
 				'menu_slug' => 'xvr_featured_posts_plugin',
 				'callback' => [ $this->callback, 'featured_posts_settings' ],
-				'icon_url' => 'dashicons-store',
+				'icon_url' => 'dashicons-heart',
 				'position' => 110,
 			]
 		];
