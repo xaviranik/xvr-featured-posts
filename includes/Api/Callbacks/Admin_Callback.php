@@ -35,6 +35,8 @@ class Admin_Callback extends Base_Controller {
 	public function xvr_featured_posts_select_box( $args ) {
 		$name = $args['label_for'];
 		$options = $args['options'];
+		$is_multiple = isset( $args['is_multiple'] ) ? $args['is_multiple'] ? 'multiple' : '' : '';
+
 		$value = esc_attr( get_option( $name ) );
 
 		$select_options = '';
@@ -43,7 +45,7 @@ class Admin_Callback extends Base_Controller {
 			$select_options .= '<option value="'. $key .'" ' . $is_selected . '>'. $option . '</option>';
 		}
 
-		$output = '<select name="' . $name . '" id="' . $name . '">';
+		$output = '<select name="' . $name . '" id="' . $name . '" ' . $is_multiple. '>';
 		$output .= $select_options;
 		$output .= '</select>';
 		echo  $output;

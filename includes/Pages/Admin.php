@@ -92,6 +92,11 @@ class Admin extends Base_Controller {
 				'option_group' => 'xvr_featured_posts_option_group',
 				'option_name' => 'sorting_post',
 				'callback' => [ $this->callback,  'xvr_featured_posts_option_group'],
+			],
+			[
+				'option_group' => 'xvr_featured_posts_option_group',
+				'option_name' => 'categories_post',
+				'callback' => [ $this->callback,  'xvr_featured_posts_option_group'],
 			]
 		];
 
@@ -137,6 +142,22 @@ class Admin extends Base_Controller {
 						'desc' => 'Descending',
 						'random' => 'Random'
 					]
+				],
+			],
+			[
+				'id' => 'categories_post',
+				'title' => 'Post Categories',
+				'callback' => [ $this->callback,  'xvr_featured_posts_select_box'],
+				'page' => 'xvr_featured_posts_plugin',
+				'section' => 'xvr_featured_posts_settings_index_id',
+				'args' => [
+					'label_for' => 'categories_post[]',
+					'options' => [
+						'horror' => 'Horror',
+						'comedy' => 'Comedy',
+						'screen-play' => 'Screen Play'
+					],
+					'is_multiple' => true
 				],
 			],
 		];
