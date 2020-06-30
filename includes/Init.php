@@ -12,6 +12,7 @@ final class Init {
 			Pages\Admin::class,
 			Pages\Frontend::class,
 			Base\Enqueue::class,
+			Base\Scheduler::class,
 		];
 	}
 
